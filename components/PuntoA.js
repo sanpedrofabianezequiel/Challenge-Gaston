@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
-exports.startsWithCapital = void 0;
-function startsWithCapital(arrayName) {
+exports.PuntoA = void 0;
+function PuntoA(arrayName) {
     var result = true;
     for (var _i = 0, arrayName_1 = arrayName; _i < arrayName_1.length; _i++) {
         var iterator = arrayName_1[_i];
@@ -12,4 +12,4 @@ function startsWithCapital(arrayName) {
     }
     return result;
 }
-exports.startsWithCapital = startsWithCapital;
+exports.PuntoA = PuntoA;

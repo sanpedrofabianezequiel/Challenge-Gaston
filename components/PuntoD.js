@@ -1,23 +1,31 @@
 "use strict";
 exports.__esModule = true;
-exports.validateSurName = void 0;
-function validateSurName(arrayName) {
-    var result = true;
-    if (arrayName.length === 3) {
-        for (var _i = 0, arrayName_1 = arrayName; _i < arrayName_1.length; _i++) {
-            var iterator = arrayName_1[_i];
-            if (isValidFormat(iterator)) {
-                console.log('entro');
-            }
-        }
+exports.PuntoD = void 0;
+function PuntoD(arrayNames, size) {
+    if (size !== 3) {
+        return false;
     }
-    return result;
+    //Si se ingresan dos nombres y un apellido, los dos primeros pueden ser iniciales, o solo el 
+    //segundo. Nunca puede ser una inicial el primer nombre y no el segundo
+    if (!isMatch(arrayNames[0], arrayNames[1])) {
+        return false;
+    }
+    return true;
 }
-exports.validateSurName = validateSurName;
-function isValidFormat(item) {
-    var result = false;
+exports.PuntoD = PuntoD;
+function isInitial(item) {
     if (item.length === 2 && item[1] === '.' && item[0] === item[0].toUpperCase()) {
-        result = true;
+        return true;
     }
-    return result;
+    return false;
+}
+function isMatch(item, item2) {
+    if (isInitial(item) && isInitial(item2)) { //os dos primeros pueden ser iniciales
+        return true;
+    }
+    ;
+    if (!isInitial(item) && isInitial(item2)) { //solo el  segundo.
+        return true;
+    }
+    return false;
 }
